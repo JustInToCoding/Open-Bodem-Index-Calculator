@@ -218,10 +218,10 @@ test_that('obic_field_dt() works with just required columns', {
         ID = 1,
         S_B_OBI_A = 0.900,
         S_C_OBI_A = 0.537,
-        S_E_OBI_A = 0.658,
+        S_E_OBI_A = 0.646,
         S_M_OBI_A = 0.287,
         S_P_OBI_A = 0.571,
-        S_T_OBI_A = 0.602,
+        S_T_OBI_A = 0.599,
         key = 'ID'
       ),
     tolerance = 0.01

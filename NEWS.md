@@ -1,3 +1,21 @@
+# OBIC 4.4.0 2026-10-16
+## Added
+* Argument `B_GWL_GHG` (mean highest groundwater level, cm below ground level) to `ind_gw_recharge()`
+
+## Changed
+* The drainage correction in `ind_gw_recharge()` now applies to drained fields with `B_GWL_GHG <= 80` cm,
+instead of fields with groundwater table class IIIb or IV [#216]. 
+Scores for groundwater recharge of drained fields with a GHG of at most 80 cm will change.
+* `obic_field()` now passes `B_GWL_GHG` instead of `B_GWL_CLASS` to `ind_gw_recharge()`
+
+## Deprecated
+* Argument `B_GWL_CLASS` of `ind_gw_recharge()` is deprecated, use `B_GWL_GHG` instead. 
+`B_GWL_CLASS` is still accepted but gives a warning. When only `B_GWL_CLASS` is provided,
+`B_GWL_GHG` is estimated from the groundwater table class, such that classes I to VId 
+are treated as `B_GWL_GHG <= 80` cm and classes VII and VIII as `B_GWL_GHG > 80` cm.
+When both are provided, only `B_GWL_GHG` is used. `B_GWL_CLASS` will be removed from 
+`ind_gw_recharge()` in a future version.
+
 # OBIC 4.3.0 2026-07-02
 ## Added
 * New cultivations for BRP 2026 to `crops.obic` [crop_name (crop_code)]:
