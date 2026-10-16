@@ -18,8 +18,9 @@ compatibility of \code{\link{ind_gw_recharge}}, where B_GWL_CLASS is deprecated.
 }
 \details{
 The estimate is the midpoint of the GHG range of each groundwater table class.
-For classes with an open-ended GHG range up to class VId (Ic, IIc and IVc), the upper
-bound is set to 80 cm, so that all classes I to VId have a GHG of at most 80 cm
-and classes VII and VIII have a GHG above 80 cm.
+For classes with an open-ended GHG range up to class VId (Ic and IIc), the upper
+bound is set to 80 cm, so that classes I to VId (except IVc) have a GHG of at most 80 cm.
+Class IVc (GHG > 80 cm, GLG 80 - 120 cm) is set to 100 cm, so that IVc, VII and VIII
+have a GHG above 80 cm.
 }
 \keyword{internal}

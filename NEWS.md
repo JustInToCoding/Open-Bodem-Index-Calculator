@@ -12,7 +12,7 @@ Scores for groundwater recharge of drained fields with a GHG of at most 80 cm wi
 * Argument `B_GWL_CLASS` of `ind_gw_recharge()` is deprecated, use `B_GWL_GHG` instead. 
 `B_GWL_CLASS` is still accepted but gives a warning. When only `B_GWL_CLASS` is provided,
 `B_GWL_GHG` is estimated from the groundwater table class, such that classes I to VId 
-are treated as `B_GWL_GHG <= 80` cm and classes VII and VIII as `B_GWL_GHG > 80` cm.
+(except IVc) are treated as `B_GWL_GHG <= 80` cm and classes IVc, VII and VIII as `B_GWL_GHG > 80` cm.
 When both are provided, only `B_GWL_GHG` is used. `B_GWL_CLASS` will be removed from 
 `ind_gw_recharge()` in a future version.
 

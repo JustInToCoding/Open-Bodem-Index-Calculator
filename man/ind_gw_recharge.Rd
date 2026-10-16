@@ -59,7 +59,7 @@ Drainage reduces groundwater recharge when the field is drained (B_DRAIN = TRUE)
 and the mean highest groundwater level is at most 80 cm below ground level
 (B_GWL_GHG <= 80), following BLN3. The argument B_GWL_CLASS is deprecated. When only
 B_GWL_CLASS is provided, B_GWL_GHG is estimated from the groundwater table class,
-such that classes I to VId are considered to have B_GWL_GHG <= 80. When both are
+such that classes I to VId (except IVc) are considered to have B_GWL_GHG <= 80. When both are
 provided, only B_GWL_GHG is used.
 }
 \examples{

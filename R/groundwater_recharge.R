@@ -33,7 +33,7 @@
 #' and the mean highest groundwater level is at most 80 cm below ground level
 #' (B_GWL_GHG <= 80), following BLN3. The argument B_GWL_CLASS is deprecated. When only
 #' B_GWL_CLASS is provided, B_GWL_GHG is estimated from the groundwater table class,
-#' such that classes I to VId are considered to have B_GWL_GHG <= 80. When both are
+#' such that classes I to VId (except IVc) are considered to have B_GWL_GHG <= 80. When both are
 #' provided, only B_GWL_GHG is used.
 #'
 #' @return
@@ -164,9 +164,10 @@ ind_gw_recharge <- function(B_LU_BRP, D_PSP, D_WRI_K, I_P_SE = NULL, I_P_CO = NU
 #'
 #' @details
 #' The estimate is the midpoint of the GHG range of each groundwater table class.
-#' For classes with an open-ended GHG range up to class VId (Ic, IIc and IVc), the upper
-#' bound is set to 80 cm, so that all classes I to VId have a GHG of at most 80 cm
-#' and classes VII and VIII have a GHG above 80 cm.
+#' For classes with an open-ended GHG range up to class VId (Ic and IIc), the upper
+#' bound is set to 80 cm, so that classes I to VId (except IVc) have a GHG of at most 80 cm.
+#' Class IVc (GHG > 80 cm, GLG 80 - 120 cm) is set to 100 cm, so that IVc, VII and VIII
+#' have a GHG above 80 cm.
 #'
 #' @return
 #' The estimated mean highest groundwater level (B_GWL_GHG) in cm below ground level. A numeric value.
@@ -179,7 +180,7 @@ est_gwl_ghg_from_class <- function(B_GWL_CLASS){
     'I' = 10, 'Ia' = 12.5, 'Ic' = 52.5,
     'II' = 15, 'IIa' = 12.5, 'IIb' = 32.5, 'IIc' = 60,
     'III' = 20, 'IIIa' = 12.5, 'IIIb' = 32.5,
-    'IV' = 60, 'IVu' = 60, 'IVc' = 80,
+    'IV' = 60, 'IVu' = 60, 'IVc' = 100,
     'V' = 20, 'sV' = 20, 'sVb' = 32.5,
     'Va' = 12.5, 'Vao' = 12.5, 'Vad' = 12.5,
     'Vb' = 32.5, 'Vbo' = 32.5, 'Vbd' = 32.5,

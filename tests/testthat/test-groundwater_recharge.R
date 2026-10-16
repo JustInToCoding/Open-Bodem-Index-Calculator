@@ -49,17 +49,17 @@ test_that("deprecated B_GWL_CLASS still works and gives a warning", {
     regexp = 'deprecated'
   )
 
-  # classes I to VId are affected by drainage
+  # classes I to VId, except IVc, are affected by drainage
   cl.drain <- c("I", "Ia", "Ic", "II", "IIa", "IIb", "IIc", "III", "IIIa", "IIIb",
-                "IV", "IVu", "IVc", "V", "sV", "sVb", "Va", "Vao", "Vad",
+                "IV", "IVu", "V", "sV", "sVb", "Va", "Vao", "Vad",
                 "Vb", "Vbo", "Vbd", "VI", "VIo", "VId")
   expect_all_true(
     suppressWarnings(gwr_drain_test(TRUE, B_GWL_CLASS = cl.drain)) <
       suppressWarnings(gwr_drain_test(FALSE, B_GWL_CLASS = cl.drain))
   )
 
-  # classes VII and VIII are not affected by drainage
-  cl.nodrain <- c("VII", "VIIo", "VIId", "VIII", "VIIIo", "VIIId")
+  # classes IVc, VII and VIII are not affected by drainage
+  cl.nodrain <- c("IVc", "VII", "VIIo", "VIId", "VIII", "VIIIo", "VIIId")
   expect_equal(
     suppressWarnings(gwr_drain_test(TRUE, B_GWL_CLASS = cl.nodrain)),
     suppressWarnings(gwr_drain_test(FALSE, B_GWL_CLASS = cl.nodrain))
@@ -87,11 +87,11 @@ test_that("an error is given when both B_GWL_GHG and B_GWL_CLASS are missing", {
   expect_error(suppressWarnings(gwr_drain_test(TRUE, B_GWL_CLASS = 'X')))
 })
 
-test_that("est_gwl_ghg_from_class gives GHG <= 80 for classes I to VId", {
+test_that("est_gwl_ghg_from_class gives GHG <= 80 for classes I to VId except IVc", {
   cl.low <- c("I", "Ia", "Ic", "II", "IIa", "IIb", "IIc", "III", "IIIa", "IIIb",
-              "IV", "IVu", "IVc", "V", "sV", "sVb", "Va", "Vao", "Vad",
+              "IV", "IVu", "V", "sV", "sVb", "Va", "Vao", "Vad",
               "Vb", "Vbo", "Vbd", "VI", "VIo", "VId")
-  cl.high <- c("VII", "VIIo", "VIId", "VIII", "VIIIo", "VIIId")
+  cl.high <- c("IVc", "VII", "VIIo", "VIId", "VIII", "VIIIo", "VIIId")
   expect_all_true(est_gwl_ghg_from_class(cl.low) <= 80)
   expect_all_true(est_gwl_ghg_from_class(cl.high) > 80)
   expect_length(est_gwl_ghg_from_class(c(cl.low, cl.high)), 31)
