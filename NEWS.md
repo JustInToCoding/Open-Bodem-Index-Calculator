@@ -3,6 +3,7 @@
 * Argument `B_GWL_GHG` (mean highest groundwater level, cm below ground level) to `ind_gw_recharge()`
 
 ## Changed
+* Updated a coefficient value of evaluation function of PSP in calculation of `D_I_PSP` so that the evaluation of crops with low PSP (e.g. grassland) becomes less strict.
 * The drainage correction in `ind_gw_recharge()` now applies to drained fields with `B_GWL_GHG <= 80` cm,
 instead of fields with groundwater table class IIIb or IV [#216]. 
 Scores for groundwater recharge of drained fields with a GHG of at most 80 cm will change.
