@@ -1,3 +1,7 @@
+# OBIC 4.3.1 2026-10-16
+## Changed
+* * Updated a coefficient value of evaluation function of PSP in calculation of `D_I_PSP` so that the evaluation of crops with low PSP (e.g. grassland) becomes less strict.
+
 # OBIC 4.3.0 2026-07-02
 ## Added
 * New cultivations for BRP 2026 to `crops.obic` [crop_name (crop_code)]:
