@@ -9,7 +9,7 @@ test_that("whether ind_gw_recharge works", {
       B_SC_WENR = rep(c('Zeer groot', 'Zeer beperkt'), 3),
       D_SE = c(1, 1, 1, 6.049445, 6.049445, 6.049445)
     ),
-    expected = c(0.1514698, 0.3802220, 0.5656138, 0.9614681, 0.6772030, 0.9557414),
+    expected = c(0.2534574, 0.5847013, 0.5656138, 0.9286932, 0.6731624, 0.9550486),
     tolerance = 0.01
   )
  

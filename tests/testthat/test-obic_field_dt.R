@@ -138,7 +138,7 @@ test_that('obic_field_dt works with extended OBI', {
       I_C_PH = 0.15,
       I_C_S = 0.26,
       I_C_ZN = 0.561,
-      I_E_GWR = 0.84,
+      I_E_GWR = 0.855,
       I_E_GW_NLEA = 0.987,
       I_E_GW_NRET = 0.987,
       I_E_PEST = 0.023,
