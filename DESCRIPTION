@@ -1,7 +1,7 @@
 Package: OBIC
 Type: Package
 Title: Calculate the Open Bodem Index (OBI) Score
-Version: 4.3.0
+Version: 4.4.0
 Authors@R: c(
     person(given = "Sven", 
            family = "Verweij",
@@ -60,4 +60,4 @@ Suggests:
     roxygen2,
     glue
 VignetteBuilder: knitr
-Config/roxygen2/version: 8.0.0
+Config/roxygen2/version: 8.1.0
